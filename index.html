@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <div class="background-stars">
+            <div class="falling-stars">
+                <div class="falling-star"></div>
+                <div class="falling-star"></div>
+                <div class="falling-star"></div>
+                <div class="falling-star"></div>
+                <div class="falling-star"></div>
+            </div>
+        </div>
+        <h1>My Portfolio</h1>
+        <img src="lance.jpg" alt="Profile" class="profile-pic">
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I am a passionate developer with experience in various technologies.
+            Currently, I am enrolled in Fullbright College. My early education was completed from San Jose National High School.
+            </p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are some of the projects I've worked on:</p>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Project 1</h3>
+                            <p>Description of project 1.</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Project 1 Details</h3>
+                            <p>Developed a web-based task management system to help teams streamline their workflow. The system allowed users to create, assign, and track tasks with deadlines, automated reminders, and priority levels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Project 2</h3>
+                            <p>Description of project 2.</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Project 2 Details</h3>
+                            <p>Designed and implemented an AI chatbot to handle customer inquiries, reducing response time and improving user experience. The chatbot could answer FAQs, process orders, and escalate complex issues to human agents.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Project 3</h3>
+                            <p>Description of project 3.</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Project 3 Details</h3>
+                            <p>Built a fully functional e-commerce website with secure payment integration, product management, and user authentication. The platform supported multiple vendors, allowing them to list and sell products seamlessly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>My skill set includes:</p>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Node.js</li>
+                <li>Python, Django</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out!</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 My Portfolio</p>
+        <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

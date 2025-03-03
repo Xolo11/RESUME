@@ -1,0 +1,345 @@
+/* CSS Variables for Colors */
+:root {
+    --primary-color: #fefefe;
+    --secondary-color: #8f888800;
+    --background-color: #000000a2;
+    --text-color: #000;
+    --white: #fff;
+    --dark-bg: #333;
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --spacing-large: 40px;
+}
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color); /* Light background */
+    color: rgba(255, 255, 255, 0.8); /* Dark text */
+    position: relative; /* Position relative for background elements */
+}
+
+/* Background Stars Effect */
+.background-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow for stars */
+    z-index: -1; /* Send stars to the background */
+}
+
+.falling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.falling-star {
+    position: absolute;
+    background: rgb(255, 255, 255); /* Yellow color for stars */
+    border-radius: 50%;
+    width: 5px; /* Size of the star */
+    height: 5px; /* Size of the star */
+    animation: fall linear infinite; /* Apply falling animation */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px); /* Start above the viewport */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translateY(100vh); /* Move to the bottom of the viewport */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Generate falling stars with different animation delays */
+.falling-star:nth-child(1) { right: 10%; animation-duration: 3s; animation-delay: 0s; }
+.falling-star:nth-child(2) { left: 30%; animation-duration: 4s; animation-delay: 0.5s; }
+.falling-star:nth-child(3) { right: 50%; animation-duration: 5s; animation-delay: 1s; }
+.falling-star:nth-child(4) { left: 70%; animation-duration: 3.5s; animation-delay: 1.5s; }
+.falling-star:nth-child(5) { right: 90%; animation-duration: 4.5s; animation-delay: 2s; }
+
+.shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.shooting-star {
+    position: absolute;
+    background: rgba(251, 251, 251, 0.8); /* Yellow color for shooting stars */
+    width: 2px; /* Width of the shooting star */
+    height: 10px; /* Height of the shooting star */
+    animation: shoot linear infinite; /* Apply shooting animation */
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(-100px) translateY(0); /* Start off-screen */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translateX(100vw) translateY(100vh); /* Move to the bottom right */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Generate shooting stars with different animation delays */
+.shooting-star:nth-child(1) { top: 20%; left: 10%; animation-duration: 1s; animation-delay: 0s; }
+.shooting-star:nth-child(2) { top: 50%; left: 30%; animation-duration: 1.5s; animation-delay: 0.5s; }
+.shooting-star:nth-child(3) { top: 80%; left: 70%; animation-duration: 2s; animation-delay: 1s; }
+
+header {
+    height: 100vh; /* Full viewport height */
+    background: var(--secondary-color); /* Bootstrap primary color */
+    color: var(--white); /* White text */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.747); /* Shadow effect for header */
+}
+
+/* Other existing styles remain unchanged */
+
+.profile-pic {
+    width: 100%; /* Full width */
+    max-width: 200px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Cover the area without distortion */
+    margin-bottom: var(--spacing-medium); /* Space below the image */
+    box-shadow: 0 2px 5px rgba(25, 0, 255, 0.865); /* Shadow effect for profile picture */
+}
+
+nav {
+    background: #b99e4500; /* Dark background for nav */
+    color: rgba(25, 0, 255, 0.865); /* White text */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(25, 0, 255, 0.865); /* Shadow effect for nav */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the nav items */
+    align-items: center; /* Center align items */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--white); /* White links */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s; /* Add transform transition */
+}
+
+nav ul li a:hover {
+    color: #ff0000; /* Gold color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Section Styles */
+section {
+    display: none; /* Hide all sections by default */
+    height: auto; /* Auto height for sections */
+    padding: 30px;
+    background: var(--dark-bg); /* White background for each section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(25, 0, 255, 0.865); /* Shadow for card effect */
+    margin-bottom: var(--spacing-large); /* Space between sections */
+    text-align: center; /* Center text in sections */
+}
+
+/* Show the targeted section */
+section:target {
+    display: block; /* Show the targeted section */
+}
+
+h1 {
+    animation: float 3s ease-in-out infinite; /* Apply floating effect */
+}
+
+h2 {
+    color: var(--primary-color); /* Same as header background */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+footer {
+    text-align: center; /* Center text in footer */
+    padding: 10px 0;
+    background: var(--dark-bg); /* Dark background for footer */
+    color: var(--white); /* White text */
+    box-shadow: 0 -2px 5px rgba(25, 0, 255, 0.865); /* Shadow effect for footer */
+}
+
+.social-links a {
+    color: rgba(25, 0, 255, 0.865);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Floating text effect */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    nav ul li {
+        margin: var(--spacing-small) 0; /* Add margin for vertical spacing */
+    }
+}
+
+/* Button Styles */
+.btn {
+    background-color: var(--primary-color);
+    color: rgba(0, 0, 0, 0.865);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(25, 0, 255, 0.865);/* Darker shade on hover */
+}
+
+/* Form Styles */
+input, textarea {
+    width: 100%;
+    padding: var(--spacing-small);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: var(--spacing-small);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none; /* Remove default outline */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+    background: #5e5e5e; /* Background of the scrollbar track */
+}
+
+/* Loading Animation */
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid var(--primary-color); /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Card Flipping Effect */
+.card-container {
+    display: flex; /* Align cards in a row */
+    justify-content: center; /* Center cards */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: var(--spacing-medium); /* Space between cards */
+    max-width: 1200px; /* Optional: Set a max width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.card {
+    color: black;
+    width: calc(50% - var(--spacing-medium)); /* Set a width for two columns */
+    height: 300px; /* Set a fixed height for cards */
+    perspective: 1000px; /* Add perspective for 3D effect */
+    margin-bottom: var(--spacing-large); /* Space below each card */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    box-shadow: 0 4px 8px rgba(25, 0, 255, 0.865); /* Shadow effect for the card */
+    transition: box-shadow 0.3s; /* Smooth transition for shadow on hover */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(227, 3, 3, 0.895); /* Darker shadow on hover */
+}
+
+.card-inner {
+    position: relative; /* Position relative for absolute children */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    transition: transform 0.6s; /* Smooth transition for flipping */
+    transform-style: preserve-3d; /* Preserve 3D effect */
+}
+
+.card-front, .card-back {
+    position: absolute; /* Position absolute for front and back */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    backface-visibility: hidden; /* Hide backface */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.card-front {
+    background: var(--white); /* White background for front */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.card-back {
+    background: var(--secondary-color); /* Background for back */
+    color: var(--white); /* White text */
+    transform: rotateY(180deg); /* Rotate back face */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
